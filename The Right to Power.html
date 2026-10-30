@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Right to Power</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--surface:#ffffff;--fg:#14202e;--muted:#516173;--line:#d6dde6;--amber:#e8a317;--amber-ink:#7a5200;--teal:#16707f;--hero:#0e1a2b;--hero-fg:#f4f1e6;--display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--body:"Source Serif 4",Georgia,"Times New Roman",serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1320;--surface:#121e30;--fg:#e8edf4;--muted:#9fb0c3;--line:#26364d;--amber:#f2b134;--amber-ink:#f2c36a;--teal:#58b6c6;--hero:#060c15}}
+:root[data-theme="dark"]{--bg:#0b1320;--surface:#121e30;--fg:#e8edf4;--muted:#9fb0c3;--line:#26364d;--amber:#f2b134;--amber-ink:#f2c36a;--teal:#58b6c6;--hero:#060c15}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.65 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hero);z-index:20}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--hero);display:flex;gap:6px;overflow-x:auto;padding:10px 16px;font-family:var(--display);font-size:.9rem}
+nav a{color:var(--hero-fg);text-decoration:none;padding:6px 12px;border-radius:99px;white-space:nowrap}
+nav a:hover{background:rgba(255,255,255,.12)}
+.hero{background:var(--hero);color:var(--hero-fg);padding:72px 20px 80px;transition:background .6s}
+.wrap{max-width:980px;margin:0 auto}
+.hero h1{font-size:clamp(2.6rem,9vw,6rem);font-weight:800;letter-spacing:-.03em;max-width:12ch;margin-bottom:.3em}
+.hero h1 span{color:var(--amber);transition:color .6s,opacity .6s}
+.hero p{font-size:1.2rem;color:#c9d2de}
+.sw{display:inline-flex;align-items:center;gap:14px;margin-top:20px;background:none;border:2px solid var(--amber);color:var(--hero-fg);border-radius:99px;padding:8px 20px 8px 8px;font:700 1rem var(--display);cursor:pointer}
+.sw i{width:44px;height:28px;border-radius:99px;background:var(--amber);position:relative;transition:background .3s}
+.sw i::after{content:"";position:absolute;top:3px;left:19px;width:22px;height:22px;border-radius:50%;background:var(--hero);transition:left .3s}
+.dark .sw i{background:#44546b}.dark .sw i::after{left:3px}
+.dark main{opacity:.18;filter:grayscale(1)}
+main{transition:opacity .6s,filter .6s}
+.dark .hero h1 span{color:#2b3a52}
+.note{min-height:3.4em;margin-top:18px;font-size:1rem;color:#9fb0c3}
+section{padding:64px 20px;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.card p{margin:0;font-size:.98rem;color:var(--muted)}
+.big{font:800 clamp(2.4rem,6vw,3.6rem)/1 var(--display);color:var(--teal);margin-bottom:6px}
+.src{font-size:.85rem;color:var(--muted);margin-top:10px!important}
+.bars{margin:24px 0}
+.row{display:grid;grid-template-columns:90px 1fr 56px;align-items:center;gap:12px;margin:8px 0;font-family:var(--display);font-size:.95rem}
+.track{background:var(--line);border-radius:4px;height:20px;overflow:hidden}
+.fill{height:100%;background:var(--teal);width:0;transition:width 1s}
+.fill.f{background:var(--amber)}
+.legend{font-size:.9rem;color:var(--muted)}
+.pol{border-left:6px solid var(--amber);padding:6px 0 6px 20px;margin:24px 0;background:none}
+.pol h3{margin-bottom:4px}
+.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.who{display:flex;flex-direction:column;gap:4px;font-size:.98rem}
+.who b{font-family:var(--display)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
+summary{cursor:pointer;font:700 1.05rem var(--display)}
+details p{margin:10px 0 0;font-size:1rem}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.98rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 18px 52px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--amber);color:#14202e;font:800 1rem/36px var(--display);text-align:center}
+.pill{display:inline-block;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:2px 12px;margin:0 6px 6px 0;font:600 .88rem var(--display)}
+.tall{background:var(--hero);color:var(--hero-fg)}
+.tall p{color:#c9d2de}
+footer{padding:32px 20px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><a href="#problem">The problem</a><a href="#rights">Natural rights</a><a href="#evidence">Evidence</a><a href="#federalism">Federalism</a><a href="#ideology">Ideology</a><a href="#plan">Our plan</a><a href="#debate">Counterargument</a></nav>
+
+<header class="hero" id="top">
+<div class="wrap">
+<h1>The Right to <span>Power</span></h1>
+<p>Should access to clean and affordable energy be considered a natural right? A policy brief for the National Commission on Energy Rights.</p>
+<button class="sw" id="sw" aria-pressed="false"><i></i><span id="swl">Cut the power</span></button>
+<p class="note" id="note" aria-live="polite">Try it. This is what the question is really about.</p>
+</div>
+</header>
+
+<main>
+<section id="problem"><div class="wrap">
+<h2>The problem: demand is rising and bills are too</h2>
+<p>Electricity runs our lights, refrigeration, heating and cooling, schools, and phones. At the same time, AI data centers, electric vehicles, and extreme weather are straining the grid, and federal and state governments disagree about how to respond.</p>
+<div class="grid">
+<div class="card"><div class="big">21,112 MW</div><h3>California battery storage</h3><p>Batteries store midday solar power and release it when demand rises. Solar use grew 22% between the first halves of 2024 and 2026.</p><p class="src">California Energy Commission, Aug. 7, 2026</p></div>
+<div class="card"><div class="big">~29 GW</div><h3>PJM data-center demand by 2030</h3><p>The nation’s largest grid, serving 67 million people, is tracking data centers whose growth has pushed up prices and threatens reliability.</p><p class="src">Reuters, Oct. 12, 2026</p></div>
+<div class="card"><div class="big">3.4%</div><h3>Solar’s share of US energy (2025)</h3><p>Natural gas and coal still supply about 59% of the mix, so a cleaner and more reliable grid needs planning, not just a promise.</p><p class="src">2025 US energy data (see chart below)</p></div>
+</div>
+<h3 style="margin-top:36px">Share of US energy produced by source, 2025</h3>
+<div class="bars" id="bars" role="img" aria-label="Bar chart of US energy shares: natural gas 39.8%, coal 19.5%, nuclear 18.2%, wind 10.2%, hydro 6.2%, solar 3.4%, biomass 1.3%, other 1.4%"></div>
+<p class="legend">Amber bars are fossil fuels. Teal bars are nuclear, renewables, and other sources.</p>
+</div></section>
+
+<section id="rights"><div class="wrap">
+<h2>Natural rights and the purpose of government</h2>
+<p>The Declaration of Independence says rights are not handed out by a government. People are born with them, and governments exist to secure them. John Locke’s social contract says the same: people consent to government so that it protects life, liberty, and property.</p>
+<p>The hard question is the tension at the center of this project. A natural right is not automatically a government service, and the Constitution never names energy, housing, food, or healthcare. Our answer is that electricity is the condition for exercising rights we already have. Without it, a student cannot study at night, a family cannot keep food or medicine cold, and a worker cannot join a modern economy.</p>
+<div class="card"><h3>Literature connection: <em>Into the Wild</em></h3><p>Jon Krakauer’s book shows how independence and survival depend on knowing your environment and having the resources to live in it. Chris McCandless’s story is a reminder that freedom without access to essentials is fragile. Energy is the essential resource of modern life.</p></div>
+</div></section>
+
+<section id="evidence"><div class="wrap">
+<h2>Four current stories, one pattern</h2>
+<details open><summary>California expands battery storage (Aug. 7, 2026)</summary><p>The state reported 21,112 megawatts of battery storage. Government planning and investment can make clean electricity available when demand is high, but it takes infrastructure, not just a declaration.</p></details>
+<details><summary>California requires 6,000 MW of new clean capacity (Mar. 2, 2026)</summary><p>The California Public Utilities Commission approved a decision requiring regulated providers to procure 6,000 megawatts of new clean-energy and storage capacity. Public regulation can make sure enough power exists as demand grows.</p></details>
+<details><summary>States sue over offshore wind agreements</summary><p>California, New York, and other states sued the federal administration over agreements involving payments to offshore wind developers to abandon projects. The administration said investment could go to other sources; the states said the deals were unlawful and could harm energy supply and climate goals. Energy policy changes with political leadership even though households depend on steady power.</p></details>
+<details><summary>PJM moves to track data centers (Oct. 12, 2026)</summary><p>US regulators said PJM Interconnection can begin building a database to track data centers, whose rapid expansion has raised prices and strained reliability. Who pays for new grid infrastructure is now a core fairness question.</p></details>
+<h3 style="margin-top:32px">The math connection: Calculus BC</h3>
+<p>In AP Calculus BC we analyzed electrical pathways and power grids to find more efficient distribution routes. Shorter, better-optimized paths mean less waste, less grid overload, and lower costs. That is why our plan pairs a guarantee of access with efficiency standards and grid upgrades.</p>
+</div></section>
+
+<section id="federalism"><div class="wrap">
+<h2>Who should be responsible? The federalism analysis</h2>
+<p>Suppose Congress guarantees every household a minimum amount of affordable, clean electricity. The system works only if each level does its job.</p>
+<div class="tbl"><table>
+<tr><th>Actor</th><th>Responsibility</th></tr>
+<tr><td>Federal government</td><td>National minimum standards, interstate grid regulation, funding for low-income households</td></tr>
+<tr><td>State governments</td><td>Regulate utilities, write energy plans, encourage renewables and storage</td></tr>
+<tr><td>Local governments</td><td>Community solar, efficient public buildings, helping residents find assistance</td></tr>
+<tr><td>Private companies</td><td>Generate and deliver power, maintain lines, pay a fair share of grid costs</td></tr>
+</table></div>
+<p style="margin-top:20px">When federal and state policies conflict, a valid federal law wins under the <b>Supremacy Clause</b>. Congress can regulate interstate power grids and pipelines through the <b>Commerce Clause</b>, and in <b>McCulloch v. Maryland</b> the Supreme Court read the <b>Necessary and Proper Clause</b> to give Congress implied powers to carry out its enumerated ones. States keep the freedom to go further than the federal minimum, so the floor is national and the ceiling is local.</p>
+</div></section>
+
+<section id="ideology"><div class="wrap">
+<h2>Why people who agree energy matters still disagree</h2>
+<div class="pol"><h3>Conservative</h3><p>Prioritizes reliability, lower costs, and domestic production. The Trump administration has favored fossil-fuel production and rolled back support for some clean-energy projects.</p></div>
+<div class="pol"><h3>Liberal</h3><p>Prioritizes consumer protection, aid for low-income households, and clean-energy investment, as in federal clean-energy tax incentives and California’s affordability programs.</p></div>
+<div class="pol"><h3>Libertarian</h3><p>Favors individual choice, free markets, and fewer regulations, and would oppose a federally guaranteed energy entitlement.</p></div>
+<div class="pol"><h3>Progressive</h3><p>Treats energy as a basic necessity and pushes for public investment in renewables, utility assistance, and protection for disadvantaged communities.</p></div>
+<p>A progressive may say government must guarantee affordable clean power. A conservative may say competition should set prices, with limited help for those in need. No single policy satisfies both, so any real plan needs trade-offs.</p>
+</div></section>
+
+<section id="plan"><div class="wrap">
+<h2>Our answer: yes, and here is the policy</h2>
+<p>Access to clean and affordable energy should be treated as a natural right. Our <b>Energy Access Program</b> guarantees a basic level of access instead of controlling every energy decision.</p>
+<ol class="steps">
+<li><h3>Congress guarantees a minimum</h3><p>Every household gets access to a minimum amount of reliable, affordable electricity, with federal funding to states and national consumer-protection standards.</p></li>
+<li><h3>States run it</h3><p>States regulate utilities, write energy plans, expand renewables and storage, and operate bill-assistance programs.</p></li>
+<li><h3>Localities connect people</h3><p>Cities support community solar, upgrade public buildings, and help residents enroll in assistance.</p></li>
+<li><h3>Big users pay their share</h3><p>Large energy users such as data centers cover the infrastructure costs their demand creates, so costs are not shifted onto households.</p></li>
+<li><h3>Protect affordability and reliability</h3><p>Rules against unreasonable disconnections, regular rate reviews, and investment in power lines, storage, and a diverse energy mix.</p></li>
+</ol>
+<p><b>Funding:</b> a mix of federal and state money, assistance programs, and fair contributions from large users. <b>Limits:</b> transparent budgets, clear standards, and states free to choose their own energy sources.</p>
+</div></section>
+
+<section id="debate"><div class="wrap">
+<h2>Counterargument, rebuttal, and constitutional limits</h2>
+<div class="two">
+<div class="card"><h3>The counterargument</h3><p>The Constitution does not list electricity as a right, and Congress cannot create unlimited power just by calling something a natural right. Opponents also warn of higher federal spending and interference in private markets. <i>U.S. v. Lopez</i> shows the Court will police the limits of the Commerce Clause.</p></div>
+<div class="card"><h3>The rebuttal</h3><p>Our program does not claim a new constitutional right. It rests on enumerated powers: regulating interstate commerce, taxing, and spending for the general welfare. Electric grids cross state lines and are economic activity, which is exactly what <i>Lopez</i> says Congress may regulate. A guaranteed minimum plus targeted aid is also a realistic compromise, not free power for all.</p></div>
+</div>
+<p style="margin-top:24px"><b>Who would support it:</b> progressives, liberals, and environmental groups like the Sierra Club. <b>Who would oppose it:</b> conservatives, libertarians, and some energy companies. Public support rises when bills, outages, or pollution hit home, which is why a targeted, state-run design has the best chance of passing.</p>
+</div></section>
+
+<section class="tall"><div class="wrap">
+<h2>The bottom line</h2>
+<p>Electricity is the condition for living safely and using the rights we already have. Under natural-rights and social-contract principles, government has a duty to protect access to it, through national standards, state management, and fair costs. A right to power means a guaranteed floor, not government control of the grid.</p>
+<span class="pill">Declaration of Independence</span><span class="pill">John Locke</span><span class="pill">McCulloch v. Maryland</span><span class="pill">Supremacy Clause</span><span class="pill">Commerce Clause</span><span class="pill">U.S. v. Lopez</span>
+</div></section>
+</main>
+<footer><div class="wrap">AP U.S. Government and Politics Policy Investigation. Sources: California Energy Commission (Aug. 7, 2026), California Public Utilities Commission (Mar. 2, 2026), Reuters (Oct. 12, 2026), reporting on state lawsuits over offshore wind, and 2025 US energy production data.</div></footer>
+
+<script>
+(function(){
+var data=[["Natural gas",39.8,1],["Coal",19.5,1],["Nuclear",18.2,0],["Wind",10.2,0],["Hydro",6.2,0],["Solar",3.4,0],["Biomass",1.3,0],["Other",1.4,0]];
+var b=document.getElementById("bars"),h="";
+data.forEach(function(d){h+='<div class="row"><span>'+d[0]+'</span><div class="track"><div class="fill'+(d[2]?' f':'')+'" data-w="'+d[1]/40*100+'"></div></div><span>'+d[1]+'%</span></div>'});
+b.innerHTML=h;
+var fills=b.querySelectorAll(".fill");
+function grow(){fills.forEach(function(f){f.style.width=f.dataset.w+"%"})}
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){grow();io.disconnect()}});io.observe(b)}else{grow()}
+var sw=document.getElementById("sw"),note=document.getElementById("note"),lbl=document.getElementById("swl"),off=false;
+sw.addEventListener("click",function(){
+off=!off;document.body.classList.toggle("dark",off);document.documentElement.classList.toggle("dark",off);
+sw.setAttribute("aria-pressed",off);
+lbl.textContent=off?"Restore the power":"Cut the power";
+note.textContent=off?"No light, no refrigeration, no school or work from home. If you could not afford this, which of your rights could you still use?":"Power is back. The question is whether everyone can count on it.";
+});
+})();
+</script>
+</body>
+</html>
